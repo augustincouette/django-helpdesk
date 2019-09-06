@@ -130,7 +130,7 @@ def send_templated_mail(template_name,
                     msg.attach(filename, content)
             else:
                 if six.PY3:
-                    msg.attach_file(filefield.path)
+                    msg.attach_file(filefield.name)
                 else:
                     with open(filefield.path, 'rb') as attachedfile:
                         content = attachedfile.read()
